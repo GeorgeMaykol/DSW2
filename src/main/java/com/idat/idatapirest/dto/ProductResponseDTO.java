@@ -1,23 +1,7 @@
-package com.idat.idatapirest.model;
+package com.idat.idatapirest.dto;
 
-import java.io.Serializable;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "products")
-public class Products implements Serializable{
-
-
-
-	private static final long serialVersionUID = 2733308908054242780L;
+public class ProductResponseDTO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProducto;
 	private String nombreProducto;
 	private String descripcion;
@@ -53,7 +37,6 @@ public class Products implements Serializable{
 	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
-	
 	
 	
 
