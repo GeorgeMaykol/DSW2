@@ -12,8 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "supplier")
-public class Suppliers implements Serializable {
+@Table(name = "suppliers")
+public class Supplier implements Serializable {
 
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class Suppliers implements Serializable {
 	@JoinColumn(name = "id_Producto", nullable = false, unique = true,
 	foreignKey = @ForeignKey(foreignKeyDefinition = 
 	"foreign key(id_Producto) references products (id_Producto)"))
-	private Products products;
+	private Product products;
 
 	public Integer getIdProveedor() {
 		return idProveedor;
@@ -56,11 +56,11 @@ public class Suppliers implements Serializable {
 		this.direccion = direccion;
 	}
 
-	public Products getProducts() {
+	public Product getProducts() {
 		return products;
 	}
 
-	public void setProducts(Products products) {
+	public void setProducts(Product products) {
 		this.products = products;
 	}
 	

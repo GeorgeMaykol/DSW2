@@ -12,8 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="item")
-public class Items implements Serializable {
+@Table(name="items")
+public class Item implements Serializable {
 
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class Items implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_Cliente", nullable = false, unique = true,
 	foreignKey = @ForeignKey(foreignKeyDefinition = 
-	"foreign key(id_Cliente) references client(id_Cliente)"))
+	"foreign key(id_Cliente) references clients(id_Cliente)"))
 	private Client clients;
 
 	public Integer getIdItem() {

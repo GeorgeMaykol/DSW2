@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="client")
+@Table(name="clients")
 public class Client implements Serializable {
 
 	/**
@@ -29,10 +29,10 @@ public class Client implements Serializable {
 	private String celular;
 	
 	@ManyToMany(mappedBy = "clients", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	private List<Products> products = new ArrayList<>();
+	private List<Product> products = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "clients")
-	private List<Items> items = new ArrayList<>();
+	private List<Item> items = new ArrayList<>();
 
 	public Integer getIdCliente() {
 		return idCliente;
@@ -58,19 +58,19 @@ public class Client implements Serializable {
 		this.celular = celular;
 	}
 
-	public List<Products> getProducts() {
+	public List<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Products> products) {
+	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
 
-	public List<Items> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Items> items) {
+	public void setItems(List<Item> items) {
 		this.items = items;
 	}
 	

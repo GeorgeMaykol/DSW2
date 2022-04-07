@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.idat.idatapirest.dto.ProductRequestDTO;
 import com.idat.idatapirest.dto.ProductResponseDTO;
-import com.idat.idatapirest.model.Products;
+import com.idat.idatapirest.model.Product;
 import com.idat.idatapirest.service.ProductService;
 
 @RestController

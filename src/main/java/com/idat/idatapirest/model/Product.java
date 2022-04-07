@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "products")
-public class Products implements Serializable{
+public class Product implements Serializable{
 
 	private static final long serialVersionUID = 2733308908054242780L;
 	
@@ -31,7 +31,7 @@ public class Products implements Serializable{
 	private Integer stock;
 	
 	@OneToOne(mappedBy = "products")
-	private Suppliers suppliers;
+	private Supplier suppliers;
 	
 	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "producto_cliente", 
@@ -39,7 +39,7 @@ public class Products implements Serializable{
 	@ForeignKey(foreignKeyDefinition = "foreign key(id_Producto) references products (id_Producto)")),
 	inverseJoinColumns = @JoinColumn(name="id_Cliente", nullable = false, unique = true, foreignKey= 
 	@ForeignKey(foreignKeyDefinition = 
-	"foreign key(id_Cliente) references client (id_Cliente)")))
+	"foreign key(id_Cliente) references clients (id_Cliente)")))
 	private List<Client> clients = new ArrayList<>();
 
 	public Integer getIdProducto() {
@@ -82,11 +82,11 @@ public class Products implements Serializable{
 		this.stock = stock;
 	}
 
-	public Suppliers getSuppliers() {
+	public Supplier getSuppliers() {
 		return suppliers;
 	}
 
-	public void setSuppliers(Suppliers suppliers) {
+	public void setSuppliers(Supplier suppliers) {
 		this.suppliers = suppliers;
 	}
 
